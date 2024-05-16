@@ -5,16 +5,17 @@
 %  automatically when a transition from a character from one unicode block to a
 %  character from another unicode block is encountered by XeTeX
 %
-%  Current compatibility should be Unicode 15.0
+%  Current compatibility should be Unicode 16.0
 %
 %  Credits:
-%   v2.5-2.6: Werner Lemberg
+%   v2.5-2.7: Werner Lemberg
 %   v2.4: Werner Lemberg, Shreeshrii
 %   v2.1-2.3: Qing Lee, Werner Lemberg
 %   v2.0: Enrico Gregorio
 %   v1.0: Mike "Pomax" Kamermans
 %
 %  Significant updates:
+%   v2.7: Unicode 16 support, new class \EgyptianHieroglyphsFull
 %   v2.6: Unicode 15 support
 %   v2.5: Unicode 14 support
 %   v2.4: Unicode 13 support
@@ -28,7 +29,7 @@
 %
 % ----------------------------------------------------------------------------
 
-\ProvidesPackage{ucharclasses}[2022/10/20 v2.6.0 Unicode block character classes for XeLaTeX]
+\ProvidesPackage{ucharclasses}[2024/05/16 v2.7.0 Unicode block character classes for XeLaTeX]
 
 \newif\if@ucharclassverbose
 \DeclareOption{verbose}{\@ucharclassverbosetrue}
@@ -109,7 +110,7 @@
   \do{Cuneiform}{"012000}{"0123FF}
   \do{CuneiformNumbersAndPunctuation}{"012400}{"01247F}
   \do{CurrencySymbols}{"020A0}{"020CF}
-  \do{CypriotSyllabary}{"010800}{"01083F}
+%     CypriotSyllabary (see below)
   \do{Cyrillic}{"0400}{"04FF}
   \do{CyrillicExtendedA}{"02DE0}{"02DFF}
   \do{CyrillicExtendedB}{"0A640}{"0A69F}
@@ -244,9 +245,9 @@
   \do{EnclosedIdeographicSupplement}{"01F200}{"01F2FF}
   \do{HangulJamoExtendedA}{"0A960}{"0A97F}
   \do{HangulJamoExtendedB}{"0D7B0}{"0D7FF}
-  \do{ImperialAramaic}{"010840}{"01085F}
-  \do{InscriptionalPahlavi}{"010B60}{"010B7F}
-  \do{InscriptionalParthian}{"010B40}{"010B5F}
+%     ImperialAramaic (see below)
+%     InscriptionalPahlavi (see below)
+%     InscriptionalParthian (see below)
   \do{Javanese}{"0A980}{"0A9DF}
   \do{Kaithi}{"011080}{"0110CF}
   \do{Lisu}{"0A4D0}{"0A4FF}
@@ -334,6 +335,8 @@
 % Unicode 11.0 additions needed for classes
   \do{GeorgianExtended}{"01C90}{"01CBF}
 % Unicode 12.0 additions needed for classes
+  % The range was extended in Unicode 15.0
+  \do{EgyptianHieroglyphFormatControls}{"013430}{"01345F}
   \do{SmallKanaExtension}{"01B130}{"01B16F}
   \do{SymbolsAndPictographsExtendedA}{"01FA70}{"01FAFF}
 % Unicode 13.0 additions needed for classes
@@ -350,10 +353,15 @@
   \do{CJKUnifiedIdeographsExtensionH}{"031350}{"0323AF}
   \do{CyrillicExtendedD}{"01E030}{"01E08F}
   \do{DevanagariExtendedA}{"011B00}{"011B5F}
+% Unicode 16.0 additions needed for classes
+  \do{CJKUnifiedIdeographsExtensionI}{"02EBF0}{"02EE5F}
+  \do{EgyptianHieroglyphsExtendedA}{"013460}{"0143FF}
+  \do{MyanmarExtendedC}{"0116D0}{"0116FF}
 %
   \ifdefined\XeTeXinterwordspaceshaping
 %   Unicode 5.1 block definitions
     \do{Carian}{"0102A0}{"0102DF}
+    \do{CypriotSyllabary}{"010800}{"01083F}
     \do{Gothic}{"010330}{"01034F}
     \do{Kharoshthi}{"010A00}{"010A5F}
     \do{Lycian}{"010280}{"01029F}
@@ -363,6 +371,9 @@
     \do{SupplementaryPrivateUseAreaA}{"0F0000}{"0FFFFF}
     \do{SupplementaryPrivateUseAreaB}{"0100000}{"010FFFF}
 %   Unicode 5.2 additions
+    \do{ImperialAramaic}{"010840}{"01085F}
+    \do{InscriptionalPahlavi}{"010B60}{"010B7F}
+    \do{InscriptionalParthian}{"010B40}{"010B5F}
     \do{OldSouthArabian}{"010A60}{"010A7F}
     \do{OldTurkic}{"010C00}{"010C4F}
 %   Unicode 7.0 additions
@@ -407,8 +418,6 @@
     \do{OldSogdian}{"010F00}{"010F2F}
     \do{Sogdian}{"010F30}{"010F6F}
 %   Unicode 12.0 additions
-    % The range was extended in Unicode 15.0
-    \do{EgyptianHieroglyphFormatControls}{"013430}{"01345F}
     \do{Elymaic}{"010FE0}{"010FFF}
     \do{Nandinagari}{"0119A0}{"0119FF}
     \do{NyiakengPuachueHmong}{"01E100}{"01E14F}
@@ -434,6 +443,15 @@
     \do{KaktovikNumerals}{"01D2C0}{"01D2DF}
     \do{Kawi}{"011F00}{"011F5F}
     \do{NagMundari}{"01E4D0}{"01E4FF}
+%   Unicode 16.0 additions
+    \do{Garay}{"010D40}{"010D8F}
+    \do{GurungKhema}{"016100}{"01613F}
+    \do{KiratRai}{"016D40}{"016D7F}
+    \do{OlOnal}{"01E5D0}{"01E5FF}
+    \do{Sunuwar}{"011BC0}{"011BFF}
+    \do{SymbolsForLegacyComputingSupplement}{"01CC00}{"01CEBF}
+    \do{Todhri}{"0105C0}{"0105FF}
+    \do{TuluTigalari}{"011380}{"0113FF}
   \fi
 }
 
@@ -469,6 +487,7 @@
   \doclass{Cyrillics}
   \doclass{Devanagari}
   \doclass{Diacritics}
+  \doclass{EgyptianHieroglyphsFull}
   \doclass{EthiopicFull}
   \doclass{GeorgianFull}
   \doclass{Greek}
@@ -528,6 +547,7 @@
   \do{CJKUnifiedIdeographsExtensionF}
   \do{CJKUnifiedIdeographsExtensionG}
   \do{CJKUnifiedIdeographsExtensionH}
+  \do{CJKUnifiedIdeographsExtensionI}
   \do{EnclosedCJKLettersAndMonths}
   \do{EnclosedIdeographicSupplement}
   \do{IdeographicDescriptionCharacters}
@@ -603,6 +623,12 @@
   \do{SpacingModifierLetters}
 }
 
+\def\EgyptianHieroglyphFullClasses{
+  \do{EgyptianHieroglyphs}
+  \do{EgyptianHieroglyphFormatControls}
+  \do{EgyptianHieroglyphsExtendedA}
+}
+
 \def\EthiopicFullClasses{
   \do{Ethiopic}
   \do{EthiopicExtended}
@@ -676,6 +702,7 @@
   \do{Myanmar}
   \do{MyanmarExtendedA}
   \do{MyanmarExtendedB}
+  \do{MyanmarExtendedC}
 }
 
 \def\PhoneticsClasses{
@@ -773,7 +800,6 @@
   \do{DominoTiles}
 %     Duployan (see below)
   \do{EarlyDynasticCuneiform}
-  \do{EgyptianHieroglyphs}
   \do{Elbasan}
   \do{EnclosedAlphanumerics}
   \do{EnclosedAlphanumericSupplement}
@@ -894,7 +920,6 @@
     \do{DivesAkuru}
     \do{Dogra}
     \do{Duployan}
-    \do{EgyptianHieroglyphFormatControls}
     \do{Elymaic}
     \do{GeorgianExtended}
     \do{Gothic}
@@ -1137,6 +1162,7 @@
 %   - Cyrillics
 %   - Devanagari
 %   - Diacritics
+%   - EgyptianHieroglyphsFull
 %   - EthiopicFull
 %   - GeorgianFull
 %   - Greek

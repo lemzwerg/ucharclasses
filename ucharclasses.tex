@@ -63,7 +63,7 @@
 
 \begin{document}
 
-  \title{ucharclasses v2.6}
+  \title{ucharclasses v2.7}
   \author{Mike “Pomax” Kamermans}
   \date{\today}
   \maketitle
@@ -213,6 +213,7 @@
         \item Cyrillics
         \item Devanagari
         \item Diacritics
+        \item EgyptianHieroglyphsFull
         \item EthiopicFull
         \item GeorgianFull
         \item Greek
@@ -383,7 +384,7 @@
 
   \section{Package options and Unicode blocks}
 
-    The following Unicode blocks are available for use in transition rules (corresponding to Unicode version 15.0), as well as for use as package options when you want ucharclasses to only load those classes that you know are used in your document.
+    The following Unicode blocks are available for use in transition rules (corresponding to Unicode version 16.0), as well as for use as package options when you want ucharclasses to only load those classes that you know are used in your document.
 
     Starting with XeTeX version 0.99994 (available in TeXLive 2016), the number of \textbackslash XeTeXcharclass registers was extended from 256 to 4096; some not so important blocks are thus provided only for this and newer versions; in the list below, those blocks are put into parentheses.
 
@@ -450,6 +451,7 @@
         \item CJKUnifiedIdeographsExtensionF
         \item CJKUnifiedIdeographsExtensionG
         \item CJKUnifiedIdeographsExtensionH
+        \item CJKUnifiedIdeographsExtensionI
         \item CombiningDiacriticalMarks
         \item CombiningDiacriticalMarksExtended
         \item CombiningDiacriticalMarksForSymbols
@@ -463,7 +465,7 @@
         \item Cuneiform
         \item CuneiformNumbersAndPunctuation
         \item CurrencySymbols
-        \item CypriotSyllabary
+        \item (CypriotSyllabary)
         \item (CyproMinoan)
         \item Cyrillic
         \item CyrillicExtendedA
@@ -482,7 +484,8 @@
         \item (Duployan)
         \item (EarlyDynasticCuneiform)
         \item EgyptianHieroglyphs
-        \item (EgyptianHieroglyphFormatControls)
+        \item EgyptianHieroglyphFormatControls
+        \item EgyptianHieroglyphsExtendedA
         \item Elbasan
         \item (Elymaic)
         \item Emoticons
@@ -495,6 +498,7 @@
         \item EthiopicExtendedA
         \item EthiopicExtendedB
         \item EthiopicSupplement
+        \item (Garay)
         \item GeneralPunctuation
         \item GeometricShapes
         \item GeometricShapesExtended
@@ -510,6 +514,7 @@
         \item Gujarati
         \item (GunjalaGondi)
         \item Gurmukhi
+        \item (GurungKhema)
         \item HalfwidthAndFullwidthForms
         \item HangulCompatibilityJamo
         \item HangulJamo
@@ -523,10 +528,10 @@
         \item Hiragana
         \item IdeographicDescriptionCharacters
         \item IdeographicSymbolsAndPunctuation
-        \item ImperialAramaic
+        \item (ImperialAramaic)
         \item (IndicSiyaqNumbers)
-        \item InscriptionalPahlavi
-        \item InscriptionalParthian
+        \item (InscriptionalPahlavi)
+        \item (InscriptionalParthian)
         \item IPAExtensions
         \item Javanese
         \item Kaithi
@@ -547,6 +552,7 @@
         \item KhmerSymbols
         \item Khojki
         \item Khudawadi
+        \item (KiratRai)
         \item Lao
         \item LatinExtendedAdditional
         \item LatinExtendedA
@@ -601,6 +607,7 @@
         \item Myanmar
         \item MyanmarExtendedA
         \item MyanmarExtendedB
+        \item MyanmarExtendedC
         \item (Nabataean)
         \item (NagMundari)
         \item (Nandinagari)
@@ -621,6 +628,7 @@
         \item (OldSouthArabian)
         \item (OldTurkic)
         \item (OldUighur)
+        \item (OlOnal)
         \item OpticalCharacterRecognition
         \item Oriya
         \item OrnamentalDingbats
@@ -657,6 +665,7 @@
         \item SpacingModifierLetters
         \item Sundanese
         \item SundaneseSupplement
+        \item (Sunuwar)
         \item SuperscriptsAndSubscripts
         \item SupplementalArrowsA
         \item SupplementalArrowsB
@@ -670,6 +679,7 @@
         \item SylotiNagri
         \item SymbolsAndPictographsExtendedA
         \item (SymbolsForLegacyComputing)
+        \item (SymbolsForLegacyComputingSupplement)
         \item Syriac
         \item SyriacSupplement
         \item Tagalog
@@ -692,8 +702,10 @@
         \item Tibetan
         \item Tifinagh
         \item Tirhuta
+        \item (Todhri)
         \item (Toto)
         \item TransportAndMapSymbols
+        \item (TuluTigalari)
         \item Ugaritic
         \item UnifiedCanadianAboriginalSyllabics
         \item UnifiedCanadianAboriginalSyllabicsExtended
