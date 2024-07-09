@@ -8,7 +8,7 @@
 
             ucharclasses package for XeLaTex
          --------------------------------------
-           Michiel Kamermans, v2.6, October 2022
+           Michiel Kamermans, v2.7, May 2024
 
 The brief
 ---------
@@ -63,6 +63,7 @@ Unicode Compatibility
 Changelog
 ---------
 
+ v2.7: Unicode 16 support, new class \EgyptianHieroglyphsFull
  v2.6: Unicode 15 support
  v2.5: Unicode 14 support
  v2.4: Unicode 11, 12, and 13 support
@@ -75,7 +76,7 @@ Changelog
 Contributors
 ------------
 
- v2.5-2.6: Werner Lemberg
+ v2.5-2.7: Werner Lemberg
  v2.4: Werner Lemberg, Shreeshrii
  v2.1-2.3: Qing Lee, Werner Lemberg
  v2.0: Enrico Gregorio
