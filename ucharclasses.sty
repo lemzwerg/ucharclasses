@@ -5,7 +5,7 @@
 %  automatically when a transition from a character from one unicode block to a
 %  character from another unicode block is encountered by XeTeX
 %
-%  Current compatibility should be Unicode 16.0
+%  Current compatibility should be Unicode 17.0
 %
 %  Credits:
 %   v2.5-2.7: Werner Lemberg
@@ -15,7 +15,7 @@
 %   v1.0: Mike "Pomax" Kamermans
 %
 %  Significant updates:
-%   v2.7: Unicode 16 support, new class \EgyptianHieroglyphsFull
+%   v2.7: Unicode 17 support, new class \EgyptianHieroglyphsFull
 %   v2.6: Unicode 15 support
 %   v2.5: Unicode 14 support
 %   v2.4: Unicode 13 support
@@ -29,7 +29,7 @@
 %
 % ----------------------------------------------------------------------------
 
-\ProvidesPackage{ucharclasses}[2024/05/16 v2.7.0 Unicode block character classes for XeLaTeX]
+\ProvidesPackage{ucharclasses}[2026/03/08 v2.7.0 Unicode block character classes for XeLaTeX]
 
 \newif\if@ucharclassverbose
 \DeclareOption{verbose}{\@ucharclassverbosetrue}
@@ -65,7 +65,7 @@
 
 \def\AllClasses{
 % Unicode 5.1 block definitions
-  \do{AegeanNumbers}{"010100}{"01013F}
+%     AegeanNumbers (see below)
   \do{AlphabeticPresentationForms}{"0FB00}{"0FB4F}
   \do{AncientGreekMusicalNotation}{"01D200}{"01D24F}
   \do{AncientGreekNumbers}{"010140}{"01018F}
@@ -357,9 +357,12 @@
   \do{CJKUnifiedIdeographsExtensionI}{"02EBF0}{"02EE5F}
   \do{EgyptianHieroglyphsExtendedA}{"013460}{"0143FF}
   \do{MyanmarExtendedC}{"0116D0}{"0116FF}
+% Unicode 17.0 additions needed for classes
+  \do{CJKUnifiedIdeographsExtensionJ}{"0323B0}{"03347F}
 %
   \ifdefined\XeTeXinterwordspaceshaping
 %   Unicode 5.1 block definitions
+    \do{AegeanNumbers}{"010100}{"01013F}
     \do{Carian}{"0102A0}{"0102DF}
     \do{CypriotSyllabary}{"010800}{"01083F}
     \do{Gothic}{"010330}{"01034F}
@@ -452,6 +455,14 @@
     \do{SymbolsForLegacyComputingSupplement}{"01CC00}{"01CEBF}
     \do{Todhri}{"0105C0}{"0105FF}
     \do{TuluTigalari}{"011380}{"0113FF}
+%   Unicode 17.0 additions
+    \do{BeriaErfe}{"016EA0}{"016EDF}
+    \do{MiscellaneousSymbolsSupplement}{"01CEC0}{"01CEFF}
+    \do{SharadaSupplement}{"011B60}{"011B7F}
+    \do{Sidetic}{"010940}{"01095F}
+    \do{TaiYo}{"01E6C0}{"01E6FF}
+    \do{TangutComponentsSupplement}{"018D80}{"018DFF}
+    \do{TolongSiki}{"011DB0}{"011DEF}
   \fi
 }
 
@@ -548,6 +559,7 @@
   \do{CJKUnifiedIdeographsExtensionG}
   \do{CJKUnifiedIdeographsExtensionH}
   \do{CJKUnifiedIdeographsExtensionI}
+  \do{CJKUnifiedIdeographsExtensionJ}
   \do{EnclosedCJKLettersAndMonths}
   \do{EnclosedIdeographicSupplement}
   \do{IdeographicDescriptionCharacters}
